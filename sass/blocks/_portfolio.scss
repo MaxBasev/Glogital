@@ -52,7 +52,7 @@
                 overflow: visible;
             }
             &__item {
-                overflow: visible;
+                overflow: hidden;
                 position: relative;
                 // width: 300px;
                 width: calc(80vw);
@@ -93,6 +93,7 @@
                     line-height: 1.5;
                 }
                 &--soon { 
+                    cursor: auto;
                     &::before{
                         content: '';
                         position: absolute;
@@ -105,6 +106,8 @@
                     }
                     &::after {
                         content: 'Soon';
+                        color: #fff;
+                        text-shadow: 10px 10px 20px rgba($color: #000000, $alpha: .6);
                         font-size: calc(100vw / 5);
                         font-weight: 700;
                         position: absolute;
@@ -115,8 +118,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        transform: rotate(-15deg);
-                        overflow: hidden;
+                        transform: rotate(-15deg) translateY(-10px);
                     }
                 }
             }
@@ -199,6 +201,9 @@
                     &:hover {
                         background-size: 130%;
                     }
+                    &--soon::after{
+                        font-size: 98px;
+                    }
                 }
             }
         }
@@ -218,6 +223,9 @@
                     &:hover {
                         box-shadow: 0 0 20px rgba($color: #000000, $alpha: .3);
                     }
+                    &--soon:after {
+                        font-size: 130px;
+                    }
                 }
             }
         }
@@ -233,6 +241,9 @@
                     width: 350px;
                     height: 280px;
                     margin-bottom: 40px;
+                    &--soon::after {
+                        font-size: 102px;
+                    }
                 }
             }
         }
