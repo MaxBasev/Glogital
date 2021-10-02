@@ -1,0 +1,134 @@
+.howWeWork {
+    .container {
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            li {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 30px;
+                img {
+                    width: 150px;
+                    margin-bottom: 20px;
+                    opacity: .9;
+                }
+                .title {
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-align: center;
+                    color: $color-pink;
+                    margin-bottom: 10px;
+                }
+                .descr {
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: $text-color-dark;
+                    max-width: 90%;
+                }
+                &.arrow {
+                    position: relative;
+                    height: 50px;
+                    width: 1.5px;
+                    background-color: $color-pink;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        border-bottom: 1.5px solid $color-pink;
+                        border-right: 1.5px solid $color-pink;
+                        bottom: 0;
+                        transform: rotate(45deg);
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+    .howWeWork {
+        .container {
+            ul {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+                li {
+                    width: calc(100% / 4 - 40px);
+                    margin-bottom: 0;
+                    img {
+                        width: 90%;
+                    }
+                    .title {
+                        font-size: 17px;
+                    }
+                    .descr {
+                        font-size: 15px;
+                        text-align: left;
+                    }
+                    &.arrow {
+                        transform: rotate(-90deg);
+                        height: 40px;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .howWeWork {
+        .container {
+            ul {
+                li {
+                    img {
+                        width: 80%;
+                    }
+                    .title {
+                        font-size: 20px;
+                    }
+                    .descr {
+                        font-size: 15px;
+                        line-height: 1.5;
+                        text-align: center;
+                    }
+                    &.arrow {
+                        transform: rotate(-90deg);
+                        height: 40px;
+                        align-self: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .howWeWork {
+        .container {
+            ul {
+                li {
+                    .title {
+                        margin-bottom: 16px;
+                        font-size: 22px;
+                    }
+                    .descr {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}

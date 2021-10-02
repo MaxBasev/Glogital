@@ -1,0 +1,74 @@
+.leaveRequest .container {
+    form {
+        .input-box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            label {
+                font-size: 15px;
+                color: #aab1c9;
+                margin-bottom: 5px;
+            }
+            .input-item {
+                outline: 0;
+                font-size: 16px;
+                color: $text-color-dark;
+                line-height: 1.5;
+                padding: 16px 20px;
+                border: 1px solid #858ead;
+                border-radius: 10px;
+                background-color: #fefefe;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+                cursor: pointer;
+            }
+            &.select {
+                &::after {
+                    content: ' ';
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 10px 8px 0 8px;
+                    border-color: #858ead transparent transparent transparent;
+                    position: absolute;
+                    right: 20px;
+                    top: 30%;
+                    bottom: 0;
+                    margin: auto;
+                    pointer-events: none;
+                }
+            }
+        }
+        .btn {
+            margin-bottom: 20px;
+            margin-top: 60px;
+        }
+    }
+    .agreement {
+        font-size: 14px;
+        font-weight: 400;
+        color: $text-color-dark;
+        opacity: .8;
+        text-align: center;
+    }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+    .leaveRequest .container {
+        form {
+            width: 600px;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}

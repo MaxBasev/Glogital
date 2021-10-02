@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;300;400;500;600;700;800;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+    
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/container';
+
+@import 'blocks/divider';
+@import 'blocks/btn';
+@import 'blocks/header';
+@import 'blocks/footer';
+@import 'blocks/cover';
+@import 'blocks/howWeWork';
+@import 'blocks/prices';
+@import 'blocks/portfolio';
+@import 'blocks/whyTilda';
+@import 'blocks/leaveRequest';
+
+@import 'blocks/portfolio/homeLand';
+
+* {
+    // font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    // font-family: 'Montserrat Alternates', sans-serif;
+    // font-family: 'Ubuntu', sans-serif;
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    .subtitle__wrapper {
+        margin-bottom: 60px;
+        color: $text-color-light;
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h4 {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+    &.section-white {
+        background-color: $bg-color;
+        h2 {
+            color: $color-pink;
+        }
+        h4 {
+            color: $text-color-dark;
+        }
+    }
+}
+@media (min-width: 576px) {
+    section {
+        .subtitle__wrapper {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+    section {
+        .subtitle__wrapper {
+            h2 {
+                font-size: 36px;
+            }
+            h4 {
+                max-width: 60%;
+                margin: 0 auto;
+                font-size: 18px;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    section {
+        .subtitle__wrapper {
+            margin-bottom: 80px;
+            h2 {
+                font-size: 42px;
+            }
+        }
+    }
+}
+
+
+body {
+    position: relative;
+    a#scrollTop {
+        position: fixed;
+        z-index: 5;
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        opacity: .7;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+body { 
+    background-color: $color-blue;
+    background-image: $bg-gradient;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    &.homeland {
+        background-color: #285e1b;
+        background-image: url('../img/portfolio/homeland/bg.jpg');
+        section {
+            // min-height: 80vh;
+            h2 {
+                font-size: 23px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #285e1b;
+                position: relative;
+                margin-bottom: 40px;
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+            h2, p, ul {
+                padding-left: 40px;
+            }
+            p, ul {
+                line-height: 1.45;
+                font-weight: 300;
+                list-style:square;
+                span {
+                    font-weight: 600;
+                }
+            }
+            p {
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+            ul li {
+                margin-bottom: 10px;
+            }
+            img {
+                max-width: 100%;
+            }
+            &.section-green {
+                background-color: #285e1b;
+                h2 {
+                    color: $text-color-light;
+                }
+            }
+        }
+    }
+}
+
