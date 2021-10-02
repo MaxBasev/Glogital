@@ -100,6 +100,7 @@ section {
 
 body {
     position: relative;
+    overflow-x: hidden;
     a#scrollTop {
         position: fixed;
         z-index: 5;
