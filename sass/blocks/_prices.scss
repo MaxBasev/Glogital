@@ -1,4 +1,4 @@
-.prices {
+.prices-mobile {
     ul.cards {
         list-style: none;
         display: flex;
@@ -53,12 +53,12 @@
     }
 }
 
-.prices2 {
+.prices-desktop {
     display: none;
 }
 
 @media (min-width: 576px) {
-    .prices {
+    .prices-mobile {
         ul.cards {
             li.card {
                 .title {
@@ -70,7 +70,7 @@
 }
 
 @media (min-width: 768px) {
-    .prices {
+    .prices-mobile {
         display: none;
         ul.cards {
             flex-direction: row;
@@ -89,7 +89,7 @@
             }
         }
     }
-    .prices2 {
+    .prices-desktop {
         display: block;
     }
 }
@@ -98,7 +98,7 @@
 
 
 
-.prices2 {
+.prices-desktop {
     .container {
         overflow: hidden;
     }
@@ -175,7 +175,7 @@
 
 
 @media (min-width: 992px) {
-    .prices2 {
+    .prices-desktop {
         &__wrapper {
             .title {
                 font-size: 22px;

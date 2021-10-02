@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     let menu = document.querySelector('.menu'),
+        menuItems = menu.querySelectorAll('.menu__item'),
+        btnHeader = menu.querySelector('.btn-header'),
         hamburger = document.querySelector('.hamburger'),
         close = document.querySelector('.close'),
         smallHeader = document.querySelector('.header-small'),
@@ -12,15 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'hidden';
     });
 
-    close.addEventListener('click', () => {
+    function closeSideMenu() {
         menu.classList.remove('open');
         document.body.style.overflow = '';
+    }
+
+    close.addEventListener('click', closeSideMenu);
+
+    overlay.addEventListener('click', closeSideMenu);
+
+    menuItems.forEach((item) => {
+        item.addEventListener('click', closeSideMenu);
     });
 
-    overlay.addEventListener('click', () => {
-        menu.classList.remove('open');
-        document.body.style.overflow = '';
-    });
+    btnHeader.addEventListener('click', closeSideMenu);
 
     document.addEventListener('scroll', function() {
         if (document.documentElement.scrollTop >= 60) {
