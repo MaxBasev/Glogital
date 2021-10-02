@@ -23,6 +23,7 @@ footer {
 @media (min-width: 576px) {
     footer {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
         align-items: flex-end;
         a {
             text-align: left;
