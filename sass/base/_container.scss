@@ -2,6 +2,9 @@
     position: relative;
     z-index: 1;
     padding: 40px 20px;
+    &-portfolio {
+        padding: 80px 20px;
+    }
     
 }
 @media (min-width: 576px) {
@@ -20,7 +23,6 @@
     .container {
         max-width: 960px;
         margin: 0 auto;
-
     }
 }
 @media (min-width: 1200px) {
