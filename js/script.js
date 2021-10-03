@@ -11,23 +11,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     hamburger.addEventListener('click', () => {
         menu.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflowY = 'hidden';
     });
 
     function closeSideMenu() {
         menu.classList.remove('open');
-        document.body.style.overflow = '';
+        document.body.style.overflowY = '';
     }
 
     close.addEventListener('click', closeSideMenu);
 
     overlay.addEventListener('click', closeSideMenu);
 
-    menuItems.forEach((item) => {
-        item.addEventListener('click', closeSideMenu);
-    });
+    // menuItems.forEach((item) => {
+    //     item.addEventListener('click', closeSideMenu);
+    // });
 
-    btnHeader.addEventListener('click', closeSideMenu);
+    // btnHeader.addEventListener('click', closeSideMenu);
 
     document.addEventListener('scroll', function() {
         if (document.documentElement.scrollTop >= 60) {
@@ -42,20 +42,24 @@ document.addEventListener('DOMContentLoaded', function() {
         smoothScrollSpeed = 0.2;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
     anchorLinks.forEach((item) => {
         item.addEventListener('click', (e) => {
+            closeSideMenu();
             e.preventDefault();
             let pxFromTop = window.scrollY, //
                 hash = item.href.replace(/[^#]*(.*)/, '$1'),
                 pxToId = document.querySelector(hash).getBoundingClientRect().top,
                 start = null;
+            console.log(pxFromTop);
             console.log(pxToId);
+            console.log(hash);
             requestAnimationFrame(step); 
             function step(time) {
                 if (start === null) { start = time; }
-                var progress = time - start,
-                    r = (pxToId < 0 ? Math.max(pxFromTop - progress/smoothScrollSpeed, pxFromTop + pxToId - 100) : Math.min(pxFromTop + progress/smoothScrollSpeed, pxFromTop + pxToId - 100)); // -100 — отступ до ID
+                let progress = time - start,
+                    r = (pxToId < 0 ? Math.max(pxFromTop - progress/smoothScrollSpeed, pxFromTop + pxToId) : Math.min(pxFromTop + progress/smoothScrollSpeed, pxFromTop + pxToId)); // -100 — отступ до ID
                 window.scrollTo(0,r);
                 if (r != pxFromTop + pxToId) {
                     requestAnimationFrame(step);
+                    console.log('step');
                 } else {
                     location.hash = hash;  // URL с хэшем
                 }
