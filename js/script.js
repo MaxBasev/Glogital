@@ -37,5 +37,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Smooth Scroll. Source: https://qna.habr.com/q/500813
+    let anchorLinks = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
+        smoothScrollSpeed = 0.2;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
+    anchorLinks.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            let pxFromTop = window.scrollY, //
+                hash = item.href.replace(/[^#]*(.*)/, '$1'),
+                pxToId = document.querySelector(hash).getBoundingClientRect().top,
+                start = null;
+            console.log(pxToId);
+            requestAnimationFrame(step); 
+            function step(time) {
+                if (start === null) { start = time; }
+                var progress = time - start,
+                    r = (pxToId < 0 ? Math.max(pxFromTop - progress/smoothScrollSpeed, pxFromTop + pxToId - 100) : Math.min(pxFromTop + progress/smoothScrollSpeed, pxFromTop + pxToId - 100)); // -100 — отступ до ID
+                window.scrollTo(0,r);
+                if (r != pxFromTop + pxToId) {
+                    requestAnimationFrame(step);
+                } else {
+                    location.hash = hash;  // URL с хэшем
+                }
+            }
+        });
+    }, false);
+
 
 });
