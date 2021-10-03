@@ -11,18 +11,27 @@
     .container {
         max-width: 540px;
         margin: 0 auto;
+        &-portfolio {
+            padding: 80px 20px;
+        }
     }
 }
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
         margin: 0 auto;
+        &-portfolio {
+            padding: 100px 20px;
+        }
     }
 }
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
         margin: 0 auto;
+        &-portfolio {
+            padding: 100px 20px;
+        }
     }
 }
 @media (min-width: 1200px) {
@@ -30,5 +39,8 @@
         max-width: 1140px;
         margin: 0 auto;
         padding: 0;
+        &-portfolio {
+            padding: 140px 20px;
+        }
     }
 }
