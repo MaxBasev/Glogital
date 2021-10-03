@@ -23,12 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     overlay.addEventListener('click', closeSideMenu);
 
-    // menuItems.forEach((item) => {
-    //     item.addEventListener('click', closeSideMenu);
-    // });
-
-    // btnHeader.addEventListener('click', closeSideMenu);
-
     document.addEventListener('scroll', function() {
         if (document.documentElement.scrollTop >= 60) {
             smallHeader.classList.add('scroll');
@@ -46,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             let pxFromTop = window.scrollY, //
                 hash = item.href.replace(/[^#]*(.*)/, '$1'),
-                pxToId = document.querySelector(hash).getBoundingClientRect().top,
+                pxToId = item.getBoundingClientRect().top,
                 start = null;
             requestAnimationFrame(step); 
             function step(time) {
