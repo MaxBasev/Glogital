@@ -48,18 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 hash = item.href.replace(/[^#]*(.*)/, '$1'),
                 pxToId = document.querySelector(hash).getBoundingClientRect().top,
                 start = null;
-            console.log(pxFromTop);
-            console.log(pxToId);
-            console.log(hash);
             requestAnimationFrame(step); 
             function step(time) {
                 if (start === null) { start = time; }
                 let progress = time - start,
-                    r = (pxToId < 0 ? Math.max(pxFromTop - progress/smoothScrollSpeed, pxFromTop + pxToId) : Math.min(pxFromTop + progress/smoothScrollSpeed, pxFromTop + pxToId)); // -100 — отступ до ID
+                    r = (pxToId < 100 ? Math.max(pxFromTop - progress/smoothScrollSpeed, pxFromTop + pxToId) : Math.min(pxFromTop + progress/smoothScrollSpeed, pxFromTop + pxToId)); // -100 — отступ до ID
                 window.scrollTo(0,r);
                 if (r != pxFromTop + pxToId) {
                     requestAnimationFrame(step);
-                    console.log('step');
                 } else {
                     location.hash = hash;  // URL с хэшем
                 }
