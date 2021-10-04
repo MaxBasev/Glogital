@@ -1,30 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
+    let menu = document.querySelector('.menu'),
+        hamburger = document.querySelector('.hamburger'),
+        close = document.querySelector('.close'),
+        smallHeader = document.querySelector('.header-small'),
+        overlay = document.querySelector('.overlay');
+
     let mobileMenu = document.querySelector('.menu-mobile'),
-        menuHamburger = document.querySelector('.menu-horizontal__hamburger-icon'),
+        menuHamburger = document.querySelector('.menu-horizontal__hamburger'),
         closeMenuIcon = document.querySelector('.menu-mobile__close-icon'),
         horizontalMenu = document.querySelector('.menu-horizontal'),
         openMenuOverlay = document.querySelector('.menu-mobile__overlay');
 
-    function openSideMenu() {
-        mobileMenu.classList.add('open');
+    hamburger.addEventListener('click', () => {
+        menu.classList.add('open');
         document.body.style.overflowY = 'hidden';
-    }
+    });
+
     function closeSideMenu() {
-        mobileMenu.classList.remove('open');
+        menu.classList.remove('open');
         document.body.style.overflowY = '';
     }
 
-    menuHamburger.addEventListener('click', openSideMenu);
-    closeMenuIcon.addEventListener('click', closeSideMenu);
-    openMenuOverlay.addEventListener('click', closeSideMenu);
+    close.addEventListener('click', closeSideMenu);
+
+    overlay.addEventListener('click', closeSideMenu);
 
     document.addEventListener('scroll', function() {
         if (document.documentElement.scrollTop >= 60) {
-            horizontalMenu.classList.add('scroll');
+            smallHeader.classList.add('scroll');
         } else {
-            horizontalMenu.classList.remove('scroll');
+            smallHeader.classList.remove('scroll');
         }
     });
 
