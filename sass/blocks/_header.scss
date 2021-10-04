@@ -12,15 +12,21 @@
     }
     &__behance-icon {
         position: relative;
-        padding: 10px;
-        width: 60px;
-        height: 60px;
-        margin-bottom: 40px;
+        margin: 0 5px;
+        width: 50px;
+        height: 50px;
         svg {
             display: block;
             width: 100%;
             height: auto;
+            path {
+                fill: rgba($color: #fff, $alpha: .6);
+            }
         }
+    }
+    &__btn {
+        padding: 16px 20px;
+        margin: 0 5px;
     }
     &-horizontal {
         position: fixed;
@@ -119,8 +125,10 @@
         }
         &__item {
             display: block;
+            width: 100%;
             font-size: 18px;
             font-weight: 500;
+            text-align: center;
             margin-bottom: 20px;
             &s_wrapper {
                 width: 100%;
@@ -128,67 +136,120 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
                 margin-top: 40px;
             }   
             &_link {
-                display: block;
+                display: inline-block;
                 position: relative;
                 padding: 4px;
                 color: #fff;
                 text-decoration: none;
-                z-index: 2;
                 &:hover {
                     color: #fff;
                 }
             }
             &__portfolio {
-                width: calc(100% + 40px);
-                .menu__portfolio-wrapper {
+                &_main-menu {
+                    position: relative;
                     display: flex;
-                    justify-content: space-between;
-                    background-color: $text-color-light;
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    a {
+                    align-items: center;
+                    width: calc(100% + 30px);
+                    padding: 2px 15px;
+                    margin-left: -15px;
+                    background-color: #fff;
+                    .menu-mobile__item_link {
                         color: $text-color-dark;
                     }
-                    .menu__portfolio-title {
-                        position: relative;
-                        color: $text-color-light;
-                        background-color: #285e1b;
-                        margin-right: -20px;
-                        padding-right: 24px;
-                        width: 50%;
-                        text-align: right;
-                        &::before {
-                            content: '';
-                            border-bottom: 30px solid #285e1b;
-                            border-left: 40px solid transparent;
-                            height: 0;
-                            width: 20px;
-                            position: absolute;
-                            top: 0;
-                            left: -60px;
-                        }
-
+                    
+                }
+                &_title {
+                    position: relative;
+                    padding: 4px;
+                    font-weight: 500;
+                    color: #285e1b;
+                    &:hover {
+                        color: #285e1b;
+                    }
+                    &:before, &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 12px;
+                        width: 2px;
+                        height: 10px;
+                        background: #285e1b;
+                        border-radius: 2px;
+                        transition: all 150ms ease-out;
+                    }
+                    &:before {
+                        transform: rotate(-45deg);
+                        right: -8px;
+                    }
+                    &:after {
+                        transform: rotate(45deg);
+                        right: -14px;
                     }
                 }
-                .menu__portfolio-submenu {
-                    padding-right: 20px;
-                    padding-left: 0;
+                &_wrapper {
+                    position: relative;
+                    list-style: none;
                     padding-top: 10px;
-                    padding-bottom: 10px;
-                    background-color: #285e1b;
-                    align-items: flex-end;
-                    color: $text-color-light;
-                    margin-bottom: 0;
                 }
-                .menu__portfolio-subitem {
+                &_item {
+                    &.isActive {
+                        .menu-mobile__item__portfolio_link {
+                            color: $text-color-light;
+                            &::before, &::after {
+                                left: 8px;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+                &_link {
+                    display: block;
+                    position: relative;
+                    padding: 8px 20px;
                     font-size: 16px;
-                    font-weight: 400;
+                    text-align: left;
+                    color: rgba($color: #fff, $alpha: .5);
+                    transition: color .4s;
+                    &:hover {
+                        color: $text-color-light;
+                        &::before, &::after {
+                            left: 8px;
+                            opacity: 1;
+                        }
+                    }
+                    &:before, &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: -10px;
+                        width: 2px;
+                        height: 8px;
+                        background: #fff;
+                        border-radius: 2px;
+                        opacity: 0;
+                        transition: left .4s, opacity .4s;
+                    }
+                    &:before {
+                        transform: rotate(-45deg);
+                        top: 10px;
+                    }
+                    &:after {
+                        transform: rotate(45deg);
+                        top: 15px;
+                    }
                 }
             }
+        }
+        &__btn-and-behance-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         &.open {
             visibility: visible;

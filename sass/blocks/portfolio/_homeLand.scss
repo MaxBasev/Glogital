@@ -61,7 +61,8 @@
 .homeland {
     background-color: #285e1b;
     background-image: url('../img/portfolio/homeland/bg.jpg');
-    p, ul:not([class="menu__list"]) {
+    p, 
+    ul:not([class^="menu"]) {
         padding-left: 40px;
         line-height: 1.45;
         font-weight: 300;
@@ -75,7 +76,7 @@
         margin-bottom: 10px;
         margin-top: 30px;
     }
-    ul:not([class="menu__list"]) li {
+    ul:not([class^="menu"]) li {
         margin-bottom: 10px;
     }
     img {
