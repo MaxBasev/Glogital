@@ -225,6 +225,7 @@
             &__item {
                 padding: 10px 10px;
                 margin: 0 10px;
+                cursor: pointer;
                 &s_wrapper {
                     display: flex;
                     align-items: center;
@@ -234,12 +235,14 @@
                     display: block;
                     position: relative;
                     font-size: 15px;
-                    font-weight: 600;
+                    font-weight: 500;
                     text-decoration: none;
                     color: rgba($color: #fff, $alpha: .4);
                     transition: color .4s;
-                    &:hover {
-                        color: #fff;
+                }
+                &:hover {
+                    .menu-horizontal__item_link {
+                        color: #fff; 
                     }
                 }
             }
@@ -250,6 +253,26 @@
             }
             &__hamburger-icon {
                 display: none;
+            }
+            &.scroll {
+                .menu-horizontal__item_link {
+                    color: rgba($color: #fff, $alpha: .8);
+                }
+                .menu-horizontal__item:hover {
+                    .menu-horizontal__item_link {
+                        color: #fff; 
+                    }
+                }
+                .menu__behance-icon {
+                    svg path {
+                        fill: rgba($color: #fff, $alpha: .8);
+                    }
+                    &:hover {
+                        svg path {
+                            fill: #fff;
+                        }
+                    }
+                }
             }
         }
         &-mobile {
