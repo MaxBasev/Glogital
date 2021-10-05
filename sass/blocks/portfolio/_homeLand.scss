@@ -138,8 +138,13 @@
             display: none;
         }
     }
+    .project-title-wrapper {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
     img {
         max-width: 100%;
+        margin-bottom: 10px;
         &.project-mainPage {
             box-shadow: 0 0 16px rgba($color: #000000, $alpha: .6);
         }
@@ -342,7 +347,7 @@
 
 @media (min-width: 576px) {
     .homeland {
-        p, ul:not([class="menu__list"]) {
+        p, ul:not([class^="menu"]) {
             font-size: 18px;
         }
     }
@@ -427,7 +432,7 @@
 
 @media (min-width: 992px) {
     .homeland {
-        p, ul:not([class="menu__list"]) {
+        p, ul:not([class^="menu"]) {
             max-width: 600px;
         }
     }
