@@ -157,6 +157,10 @@
                 &:hover {
                     color: #fff;
                 }
+                &.isActive::before {
+                    content: '';
+
+                }
             }
             &__portfolio {
                 &_main-menu {
@@ -309,6 +313,21 @@
                     transition: color .4s;
                     &:hover {
                         color: #fff;
+                        &.isActive::before {
+                            background-color: #fff;
+                            width: 100%;
+                        }
+                    }
+                    &.isActive::before {
+                        content: '';
+                        width: 40%;
+                        height: 1px;
+                        background-color: rgba($color: #fff, $alpha: .4);
+                        position: absolute;
+                        left: 50%;
+                        bottom: 5px;
+                        transform: translateX(-50%);
+                        transition: width .4s, background-color .4s;
                     }
                 }
                 &__portfolio {
@@ -427,7 +446,14 @@
                 .menu-horizontal__item_link {
                     color: rgba($color: #fff, $alpha: .8);
                     &:hover {
-                        color: #fff; 
+                        color: #fff;
+                        &.isActive::before {
+                            background-color: #fff;
+                            width: 100%;
+                        }
+                    }
+                    &.isActive::before {
+                        background-color: rgba($color: #fff, $alpha: .8);
                     }
                 }
                 .menu-horizontal__portfolio_link {
