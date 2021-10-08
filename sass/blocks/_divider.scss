@@ -13,4 +13,42 @@
     &-top {
         margin-top: -1px;
     }
+    &-portfolio {
+        position: absolute;
+        width: 1000px;
+        bottom: -159px;
+        left: 31%;
+        transform: translateX(-50%);
+
+    }
+}
+
+@media (min-width: 576px) {
+    .divider {
+        &-portfolio {
+            width: 137%;
+            left: 58%;
+            bottom: -105px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .divider {
+        &-portfolio {
+            width: 104%;
+            left: 50%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+    .divider {
+        &-portfolio {
+            width: 100%;
+        }
+    }
 }
