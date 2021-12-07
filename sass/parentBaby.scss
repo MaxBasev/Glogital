@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import 'base/reset';
+@import 'base/container';
+@import 'base/variables';
+
+@import 'blocks/btn';
+@import 'blocks/header';
+@import 'blocks/footer';
+
+@import 'blocks/portfolio/parentbaby/header';
+
+@import 'blocks/portfolio/portfolio';
+
+body {
+    // background-color: $parentbaby-bg-color;
+}
+
+.cover {
+    background-color: $parentbaby-bg-color;
+    &__bg {
+        background-color: $parentbaby-bg-color;
+    }
+}

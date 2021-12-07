@@ -1,0 +1,35 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    font-family: 'Montserrat', sans-serif;
+    
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    // min-height: 100vh;
+    // min-height: -webkit-fill-available;
+    // height: -webkit-fill-available;
+}
+// body {
+//     min-height: 100vh;
+//     min-height: -webkit-fill-available;
+// }
+//   html {
+//     height: -webkit-fill-available;
+// }
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
