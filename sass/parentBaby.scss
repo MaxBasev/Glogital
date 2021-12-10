@@ -1,3 +1,7 @@
+:root {
+    --bg-color: #943944;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @import 'base/reset';
@@ -11,14 +15,16 @@
 @import 'blocks/portfolio/parentbaby/header';
 
 @import 'blocks/portfolio/portfolio';
+@import 'blocks/portfolio/portfolio_min576';
+@import 'blocks/portfolio/portfolio_min768';
+@import 'blocks/portfolio/portfolio_min992';
+@import 'blocks/portfolio/portfolio_min1200';
 
 body {
-    // background-color: $parentbaby-bg-color;
-}
-
-.cover {
-    background-color: $parentbaby-bg-color;
-    &__bg {
-        background-color: $parentbaby-bg-color;
-    }
+    background-color: #fff;
+    background-image: url('../img/portfolio/parentbaby/bg_presentation.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-attachment: fixed;
+    background-size: cover;
 }

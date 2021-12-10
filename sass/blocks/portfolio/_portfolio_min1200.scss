@@ -1,0 +1,13 @@
+@media (min-width: 1200px) {
+    .portfolio {
+        &__container {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        &__title {
+            &_descr {
+                font-size: 20px;
+            }
+        }
+    }
+}

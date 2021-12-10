@@ -1,0 +1,21 @@
+@media (min-width: 992px) {
+    .portfolio {
+        &__container {
+            padding-top: 180px;
+            padding-bottom: 120px;
+        }
+        &__info {
+            &_wrapper {
+                margin-bottom: 8%;
+            }
+        }
+        &__title {
+            &_wrapper {
+                margin-bottom: 50px;
+            }
+            &_descr {
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@media (min-width: 576px) {
+    .portfolio {
+        &__cover {
+            background-color: transparent;
+        }
+        &__container {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        &__info {
+            &_wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 10%;
+            }
+            &_limits {
+                &-begin {
+                    display: block;
+                    margin-top: 0;
+                }
+                &-end {
+                    display: none;
+                }
+            }
+        }
+        &__title {
+            &_descr {
+                font-size: 16px;
+            }
+        }
+    }
+}
